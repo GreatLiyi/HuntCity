@@ -1,0 +1,43 @@
+//
+//  pchFile.pch
+//  WNXhuntCity2
+//
+//  Created by isoftstone on 15/8/4.
+//  Copyright (c) 2015年 isoftstone. All rights reserved.
+//
+
+#ifdef __OBJC__
+
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+#import "Masonry.h"
+#import "UIBarButtonItem+Extension.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#define WNXGolbalGreen WNXColor(33, 197, 180)
+#define UISCREEN_WITH [UIScreen mainScreen].bounds.size.width
+#define UISCREEN_HEHTH [UIScreen mainScreen].bounds.size.height
+#define WNXColor(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1];
+//顶部拉伸的距离
+#define WNXScaleTopMargin 35.0
+//抽屉拉出来右边剩余的比例
+#define WNXZoomScaleRight 0.14
+//推荐的cell的高度
+#define WNXRnmdCellHeight 210.0
+//推荐headview的高度
+#define WNXRnndHeaderViewHeight 60.0
+//背景的灰色
+#define WNXBackGroundGrayColor WNXColor(51, 52, 53)
+
+//判断系统版本号是否是iOS8
+#define iOS8 [[UIDevice currentDevice].systemVersion.floatValue] >= 8.0
+
+#pragma clang diagnostic ignored "-W#warnings"
+
+#ifdef DEBUG
+#define DLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define DLog( s, ... )
+#endif
+#endif
